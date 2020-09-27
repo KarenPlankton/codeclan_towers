@@ -18,8 +18,7 @@ public class BedRoom extends Room {
     }
 
     public void checkInGuest(Guest guest){
-        int guests=super.getGuestListSize();
-        if(guests<super.getCapacity()) {
+        if(!this.isRoomFull()) {
             super.checkInGuest(guest);
         } else {
             System.out.println("Room is full");

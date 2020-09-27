@@ -37,12 +37,14 @@ public class Hotel {
         this.conferenceRoomList.add(room);
     }
 
-    public void checkInGuestRoom(Guest guest) {
+    public boolean checkInGuestRoom(Guest guest) {
 
         for (BedRoom i : this.bedroomList)
             if (!i.isRoomFull()) {
                 i.checkInGuest(guest);
+                return true;
             }
+        return false;
     }
 
     public void checkOutGuestRoom(Guest guest) {
@@ -53,13 +55,13 @@ public class Hotel {
 
     }
 
-    public Booking bookRoom(BedRoom room, int nightsBooked) {
-
-        Booking bookingNew = new Booking(room, nightsBooked);
-        return bookingNew;
-
-
-    }
+//    public Booking bookRoom(BedRoom room, int nightsBooked) {
+//
+//        Booking bookingNew = new Booking(room, nightsBooked);
+//        return bookingNew;
+//
+//
+//    }
 
 
 }

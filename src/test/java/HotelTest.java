@@ -3,6 +3,8 @@ import org.junit.Test;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 
 public class HotelTest {
@@ -11,6 +13,13 @@ public class HotelTest {
     BedRoom bedroom1;
     ConferenceRoom confRoom1;
     Guest guest;
+    Guest guest2;
+    Guest guest3;
+    Guest guest4;
+    Guest guest5;
+
+
+
 
 
     @Before
@@ -39,6 +48,24 @@ public class HotelTest {
 
 
    }
+
+   @Test
+    public void cantCheckInGuest() {
+
+      hotel.checkInGuestRoom(guest);
+      hotel.checkInGuestRoom(guest2);
+       hotel.checkInGuestRoom(guest3);
+       assertTrue(hotel.checkInGuestRoom(guest4));
+    }
+
+    @Test
+    public void checkInMaxGuesst() {
+
+        hotel.checkInGuestRoom(guest);
+        hotel.checkInGuestRoom(guest2);
+        hotel.checkInGuestRoom(guest3);
+        assertTrue(hotel.checkInGuestRoom(guest4));
+    }
 
 
 
